@@ -1,0 +1,52 @@
+#Variables for pu001 (LAMP Server)
+---
+#Allow webtraffic through firewall
+rhbase_firewall_allow_services:
+  - http 
+  - https 
+
+#Setting mariadb bind address
+mariadb_bind_address: '0.0.0.0'
+
+#Setting up mariadb (pu001_db)
+mariadb_databases:
+  - name: wp_db
+
+#Adding mariadb user
+mariadb_users:
+  - name: wp_user
+    password: CorkIgWac
+    priv: 'wp_db.*:ALL'
+    append_privs: yes
+
+#Pass for pu001_db
+mariadb_root_password: fogMeHud8
+
+#Define the role variables in the correct location
+httpd_ssl_certificate_key_file: 'acme-inc.key'
+httpd_ssl_certificate_file: 'acme-inc.crt'
+
+#Setting wordpress database name
+wordpress_database: wp_db
+
+#Setting wordpress database password
+wordpress_password: CorkIgWac
+
+#Setting wordpress database user
+wordpress_user: wp_user
+
+#Fail2Ban settings
+fail2ban_ignoreips: 
+ - 192.0.2.0/24
+# - 172.16.0.0/16
+ - 127.0.0.1/8
+fail2ban_services:
+ - name: sshd
+   port: 22
+   maxretry: 3
+   bantime: 86400 
+ - name: ftp
+   port: 20, 21
+   maxretry: 3
+   bantime: 86400
+   logpath: /var/log/ftpF2B.log

@@ -1,0 +1,224 @@
+#Variables for pr011 (FTP Server)
+---
+rhbase_user_groups:
+  - management
+  - technical
+  - sales
+  - it
+  - public
+
+samba_netbios_name: 'files'
+samba_map_to_guest: 'Never'
+samba_shares_root: /srv/shares/
+samba_workgroup: "avalon"
+
+
+rhbase_firewall_allow_services:
+  - samba
+  - ftp
+
+samba_users:
+  - name: stevenh
+    password: stevenh
+  - name: stevenv
+    password: stevenv
+  - name: leend
+    password: leend
+  - name: svena
+    password: svena
+  - name: nehirb
+    password: nehirb
+  - name: alexanderd
+    password: alexanderd
+  - name: krisv
+    password: krisv
+  - name: benoitp
+    password: benoitp
+  - name: anc
+    password: anc
+  - name: elenaa
+    password: elenaa
+  - name: evyt
+    password: evyt
+  - name: christophev
+    password: christophev
+  - name: stefaanv
+    password: stefaanv
+  - name: olivier
+    password: olivier
+
+rhbase_users:
+  #crypt-sha512
+  - name: stevenh
+    password: '$6$MFU5gA0C/ACXNLG4$tEUOYqq0PkN/ooRg1Ahyyur/zpBSnmf45KdzmkBamApvo0EcH8jF2PTnlRMTqJ5HhU6OBOvBQS.4geo4gDbIf1'
+    groups:
+      - management
+      - public
+  - name: stevenv
+    password: '$6$d5pVotLBV8KCckyJ$5BFw7DI611AntBczpY4SSNREyD59HN7SKpasw0U6vfTaI.1Jp/Au9a3eg3Pih1W1rSV8zJ4xb66Z6hJc4X6Uh1'
+    groups:
+      - technical
+      - public
+  - name: leend
+    password: '$6$kOw3k5yD1l9gT9zm$AOXah/rEcnlfoKHSMzzFeS9BU.3fi7bdCrfmhRIGjeHl2XQ/kO1UFIwS8gima7X8cHQB1fg6PqVwdzwb3yExH.'
+    groups:
+      - technical
+      - public
+  - name: svena
+    password: '$6$J6Gv13KwQieFBQUL$1/DqYFN3csWzOtoU/dH3zsgw57LMqJpAGawSXeVqJW12PzxejGJCJWt8rr.v6mctqXyDtCs68WxzdSMwMuN53.'
+    groups:
+      - sales
+      - public
+  - name: nehirb
+    password: '$6$k8WzUy6qvbM/uZfY$W.6bcwuFbCSqiTxyfNuo7XpxD6QMiEycOEQWCTjJVQRBggROOEx9x4y/6w682f2yvp26e9oMia45T/YSvm2Wz0'
+    groups:
+      - it
+      - public
+  - name: alexanderd
+    password: '$6$2USPpx3f23dsWFqM$EpeEhgRBn2RwBAOX9N7QNT23O.6.n9Gb9rIGycQYeqOkK1BFJKye2kJLpsaluqOzgVlrQa87mtBr4YTMKbdF2/'
+    groups:
+      - technical
+      - public
+  - name: krisv
+    password: '$6$ULFdMW1oPHHfyUAi$P.TWGluZgIeiRzhdkxQ1d.8UL.Znbz8o0.dj75Mh1HFfgokdr6KfA/NPEeq6R/6/VsqpDbloDgs4wmP8tZcvw.'
+    groups:
+      - management
+      - public
+  - name: benoitp
+    password: '$6$V1QxTaF7x8uZ2R9w$JX2F4ESYnZFhF42R9qA0cp0PLY4zhFg2igga.bzoZi2GC90SZUgcCarUf/e7o89vbuh7BDjwV3rWoB3cvkylv0'
+    groups:
+      - sales
+      - public
+  - name: anc
+    password: '$6$12sXsG9pFpussSMf$NT6VgjoKU0wrDrJhvdAJvU8f0OS295YDYgTtwXE98J0e6khixzb/LxJcbthpdbxGMOPVCh8gpEvGKrkxv070s1'
+    groups:
+      - technical
+      - public
+  - name: elenaa
+    password: '$6$wTmNawxIbnkEe/MD$bOeDavCsP1kifBEdKlVXE.sdu8H6S0w9lXX32FYW/cSqmyYtAFUxKneQmOTike8dyINp/0517pkxCbi1uDPVe1'
+    groups:
+      - management
+      - public
+  - name: evyt
+    password: '$6$d1ndyOKq4fKHuShG$U7Y5UbqJt0Jh04sstDDSJzj.BgNkr6NWkZ4GaxAhrwalyTe.qxIDsVRvfQZkXo/j5ItamsR3ovQ95ZBbuv7nT.'
+    groups:
+      - technical
+      - public
+  - name: christophev
+    password: '$6$ZuOQs9qRpCNNpCJF$Y4q0hRK5lfLIu8xiIrxLe6ItzL103VP80pP9p3yP6ze2TH3/6FP77.iMaWT3c1eSKpUREuUoIC1S7UGFzp7D20'
+    groups:
+      - it
+      - public
+  - name: stefaanv
+    password: '$6$2e2tM0lVfeUJJZ/U$4hWVaxzcQWsjJIbr09VzmB58qSJ86ScmurFKY.bnlFrwjFRo71rNfruth1pFWhNVMgDs7mI5plQPuyP99oAQI.'
+    groups:
+      - technical
+      - public
+  - name: olivier
+    password: '$6$huIyFIj/FYrKWXJi$2kAUI4c16rDggm4t8fjxKjpfGVc3h1L14/dkbuGzcHGloBJJ4qQ/MKWu.OMnpofQfddXEYU.FFVkhOXpWZFWA/'
+    groups:
+      - it
+      - public
+      - wheel
+
+samba_shares:
+  - name: public
+    group: public
+    write_list: +public
+    valid_users: +public
+    path: /srv/shares/public
+  - name: management
+    group: management
+    write_list: +management
+    valid_users: +management
+    path: /srv/shares/management
+  - name: technical
+    group: technical
+    write_list: +technical
+    valid_users: +technical, +public
+    path: /srv/shares/technical
+  - name: sales
+    group: sales
+    write_list: +sales
+    valid_users: +sales, +management
+    path: /srv/shares/sales
+  - name: it
+    group: it
+    write_list: +it
+    valid_users: +it, +management
+    path: /srv/shares/it
+
+vsftpd_anonymous_enable: false
+vsftpd_local_enable: true
+vsftpd_local_root: /srv/shares
+
+vsftpd_extra_permissions:
+    #public
+  - folder: "/srv/shares/public"
+    entity: "public"
+    etype: "group"
+    permissions: "rwx"
+
+    #management
+  - folder: "/srv/shares/management"
+    entity: "management"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/management"
+    entity: "sales"
+    etype: "group"
+    permissions: "---"
+  - folder: "/srv/shares/management"
+    entity: "it"
+    etype: "group"
+    permissions: "---"
+  - folder: "/srv/shares/management"
+    entity: "technical"
+    etype: "group"
+    permissions: "---"
+
+    #sales
+  - folder: "/srv/shares/sales"
+    entity: "sales"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/sales"
+    entity: "it"
+    etype: "group"
+    permissions: "---"
+  - folder: "/srv/shares/sales"
+    entity: "technical"
+    etype: "group"
+    permissions: "---"
+  - folder: "/srv/shares/sales"
+    entity: "management"
+    etype: "group"
+    permissions: "r-x"
+
+    #it
+  - folder: "/srv/shares/it"
+    entity: "it"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/it"
+    entity: "management"
+    etype: "group"
+    permissions: "r-x"
+  - folder: "/srv/shares/it"
+    entity: "sales"
+    etype: "group"
+    permissions: "---"
+  - folder: "/srv/shares/it"
+    entity: "technical"
+    etype: "group"
+    permissions: "---"
+
+    #technical
+  - folder: "/srv/shares/technical"
+    entity: "technical"
+    etype: "group"
+    permissions: "rwx"
+  - folder: "/srv/shares/technical"
+    entity: "public"
+    etype: "group"
+    permissions: "r-x"

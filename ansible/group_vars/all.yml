@@ -1,0 +1,32 @@
+#Variables for all the hosts
+---
+#Epel repository installation
+rhbase_repositories:
+  - epel-release
+
+#Package installation
+rhbase_install_packages:
+  - bash-completion, bash-completion-extras
+  - bind, bind-utils
+  - git
+  - nano
+  - tree
+  - vim-enhanced
+  - wget
+
+#Adding user with admin rights
+rhbase_users:
+  - name: olivier
+    comment: 'Olivier Troch'
+    groups:
+      - wheel
+    # Password = Olivier$2019 (md5)
+    # password: "$1$ZCmOfnxD$cyITe1KfW6u9DJ0bFZlbX1"
+    password: "$6$huIyFIj/FYrKWXJi$2kAUI4c16rDggm4t8fjxKjpfGVc3h1L14/dkbuGzcHGloBJJ4qQ/MKWu.OMnpofQfddXEYU.FFVkhOXpWZFWA/"
+
+#Adding ssh_user and ssh_key
+rhbase_ssh_user: olivier
+rhbase_ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQHRKCHAXT/5FtD9gm4Opbx12McrC93LmbYpYhDiRYtjDjHiPg9jBzUdBDm//LJeGKTl9agXnjHCmAfcaztfBhOYL2MOESd0j0G1MG+WrgKh3E0Rbhndxl3emAZ4pvmijNUindzVGYrtb2hvpEL5WQJTNv4xxJHBO+oSecRr9HXf8gRwUeeT25j4guv6l/Qxii2LA1qjtJJWr1A8PBoIkuQ2yQlYkyRi1rajtzOiqFATxts3n3ZraQAf8G3n/Mc2nnTUqYIwYRqD+0J8poFOqazlQ+5q2Z80WS4/W9AXvL5e2ijqcnswrcFMFPG88K+6pnD2NbUulYwNg9mjGikgXF olivi@DESKTOP-R7LRCAI
+
+#Activating message of the day
+rhbase_dynamic_motd: yes

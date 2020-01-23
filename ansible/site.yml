@@ -1,0 +1,37 @@
+# site.yml
+---
+
+- hosts: all
+  become: true
+  roles:
+    - bertvv.rhbase
+    - nbigot.fail2ban
+
+- hosts: pu001
+  become: true
+  roles:
+    - bertvv.httpd
+    - bertvv.mariadb
+    - bertvv.wordpress
+
+- hosts: pr001
+  become: true
+  roles:
+    - bertvv.bind
+
+- hosts: pr002
+  become: true
+  roles:
+    - bertvv.bind
+
+- hosts: pr003
+  become: true
+  roles:
+    - bertvv.dhcp
+    - bertvv.rhbase
+
+- hosts: pr011
+  become: true
+  roles:
+    - bertvv.samba
+    - bertvv.vsftpd

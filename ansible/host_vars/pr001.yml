@@ -1,0 +1,57 @@
+#Variables for pr001 (Primary DNS)
+---
+bind_allow_query:
+  - any
+bind_listen_ipv4:
+  - any
+bind_zone_master_server_ip: 172.16.192.1
+bind_zone_domains:
+  - name: avalon.lan
+    hosts:
+      - name: pu001
+        ip: '192.0.2.10'
+        aliases:
+          - name: www
+      - name: pu002
+        ip: '192.0.2.20'
+        aliases:
+          - name: mail
+      - name: pr001
+        ip: '172.16.192.1'
+        aliases:
+          - name: ns1
+      - name: pr002
+        ip: '172.16.192.2'
+        aliases:
+          - name: ns2
+      - name: pr003
+        ip: '172.16.192.3'
+        aliases:
+          - name: dhcp
+      - name: pr004
+        ip: '172.16.192.4'
+        aliases:
+          - name: directory
+      - name: pr010
+        ip: '172.16.192.10'
+        aliases:
+          - name: inside
+      - name: pr011
+        ip: '172.16.192.11'
+        aliases:
+          - name: files
+    networks:
+      - '172.16'
+      - '192.0.2'
+    name_servers:
+      - pr001
+      - pr002
+    mail_servers:
+      - name: pu002
+        preference: 10
+bind_dns_key:
+  - name: master_key
+    algorithm: md5
+    secret: "Olivier$2019"
+rhbase_firewall_allow_services:
+  - dns
